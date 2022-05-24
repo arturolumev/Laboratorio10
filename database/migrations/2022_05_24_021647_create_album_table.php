@@ -18,6 +18,10 @@ class CreateAlbumTable extends Migration
             $table->string('foto');
             $table->string('titulo');
             $table->string('year');
+            $table->unsignedBigInteger('artista_id');
+            $table->foreign('artista_id')->references('id')->on('artista');
+            $table->unsignedBigInteger('playlist_id');
+            $table->foreign('playlist_id')->references('id')->on('playlist');
             $table->timestamps();
         });
     }

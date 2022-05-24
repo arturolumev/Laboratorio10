@@ -18,7 +18,8 @@ class CreateCancionTable extends Migration
             $table->string('titulo');
             $table->string('duracion');
             $table->integer('reproducciones');
-            //$table->integer('reproducciones diarias');
+            $table->unsignedBigInteger('album_id');
+            $table->foreign('album_id')->references('id')->on('album');
             $table->timestamps();
         });
     }
